@@ -3,29 +3,37 @@
 # prints the output for each operation
 import sys
 
+def get_args(stringargs):
+    args = [] 
+    for arg in stringargs:
+        args.append(int(arg))
+    return args
+
 # You need to update the process function to actually handle the operations. To
 # start, it just prints out each line of the input.
 def process(line):
-    op, *args = line.split(' ')
-    if len(args) == 2:
-        a = int(args[0])
-        b = int(args[1])
-    if op == 'noop':
+    op, *stringargs = line.split(' ')
+    try:
+        args = get_args(stringargs)
+    except:
+        op = 'invalid'
+
+    if op == 'noop' and len(args) == 0:
         noop()
-    elif op == 'add':
-        add(a,b)
-    elif op == 'mul':
-        mul(a,b)
-    elif op == 'gt':
-        gt(a,b)
-    elif op == 'or':
-        log_or(a,b)
-    elif op == 'nand':
-        nand(a,b)
-    elif op == 'min':
-        minm(a,b)
-    elif op == 'shift':
-        shift(a,b)
+    elif op == 'add' and len(args) == 2:
+        add(*args)
+    elif op == 'mul' and len(args) == 2:
+        mul(*args)
+    elif op == 'gt' and len(args) == 2:
+        gt(*args)
+    elif op == 'or' and len(args) == 2:
+        logical_or(*args)
+    elif op == 'nand' and len(args) == 2:
+        nand(*args)
+    elif op == 'min' and len(args) >= 2:
+        minimum(*args)
+    elif op == 'shift' and len(args) == 2 and args[0] > 0 and args[1] > 0:
+        shift(*args)
     else:
         print("invalid operation", line)
 
@@ -44,7 +52,7 @@ def gt(a,b):
     else:
         print(0)
 
-def log_or(a,b):
+def logical_or(a,b):
     if a or b:
         print(1)
     else:
@@ -56,7 +64,7 @@ def nand(a,b):
     else:
         print(1)
 
-def minm(*args):
+def minimum(*args):
     smallest = args[0]
     for arg in args:
         if arg < smallest:
@@ -64,8 +72,7 @@ def minm(*args):
     print(smallest)
 
 def shift(a, b):
-    if a > 0 and b > 0:
-        print(a << b)
+    print(a << b)
 
 # The run function is provided, you don't need to change it.
 # It reads all the lines from a file, then calls the process function
