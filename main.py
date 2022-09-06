@@ -6,9 +6,10 @@ import sys
 # You need to update the process function to actually handle the operations. To
 # start, it just prints out each line of the input.
 def process(line):
-    op, a, b = line.split(' ')
-    a = int(a)
-    b = int(b)
+    op, *args = line.split(' ')
+    if len(args) == 2:
+        a = int(args[0])
+        b = int(args[1])
     if op == 'noop':
         noop()
     elif op == 'add':
