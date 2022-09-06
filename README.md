@@ -13,14 +13,14 @@ example, it might look like:
 add 8 16
 mul 10 3
 or 1 0
-and 1 0
+nand 1 1
 ```
 
 At each step, our model of a processor outputs a value. For this
 pretend program, the output at each step would be:
 
 ```txt
-32
+24
 30
 1
 0
@@ -29,8 +29,7 @@ pretend program, the output at each step would be:
 
 ## Processor Operations
 
-Below are the processor operations that you should support, and what they should
-do. If the processor encounters an invalid operation, it should print an error message and stop.
+Below are the processor operations that you should support, and what they should do.
 
 | Operation 	| Description                           	| Sample       	| Output 	|
 |-----------	|---------------------------------------	|--------------	|--------	|
@@ -38,15 +37,25 @@ do. If the processor encounters an invalid operation, it should print an error m
 | add       	| Add arguments                         	| add 3 140    	| 143    	|
 | mul       	| Multiply arguments                    	| mul 10 21    	| 210    	|
 | gt        	| Check if first is greater than second 	| gt 3 10      	| 0      	|
-| min       	| Find the minimum value of arguments   	| min 14 8 103 	| 8      	|
 | or        	| Logical or                            	| or 6 0       	| 1      	|
 | nand      	| Logical nand ("not and")              	| nand 1 1     	| 0      	|
+| min       	| Find the minimum value of arguments   	| min 14 8 103 	| 8      	|
 | shift     	| Shift left by a number of bits        	| shift 8 2    	| 32     	|
 | invalid     | Any non-valid operations                | not an op     | invalid operation "not an op" |
 
-Note that the logical `or` and `nand` operations should always print out a `0` or
-`1`, no matter their inputs. Non-zero numbers are treated as true, 0 is treated
-as false.
+Notes:
+* All of the operations are defined for integer arguments. Floats or other arguments are invalid.
+* Most operations take exactly two arguments.
+* `noop` takes no arguments. `min` should work with 2 or more arguments.
+* The logical `or` and `nand` operations always print out a `0` or `1`, no matter their inputs. 0 is treated as false, any other number is treated as true.
+* `shift` takes the bit representation of its argument, and moves the bits left,
+    with the number of places to shift given by the second argument. So, 8
+    (00001000) gets shifted left by 2 to become 32 (00100000).
+* `shift` is only defined for positive arguments, it is invalid for negative
+    numbers.
+* For our processor, numbers have arbitrarily many bits. Don't worry about
+    overflow or truncation for `add`, `mul`, or `shift`.
+* If the processor encounters an invalid operation, it should print an error message and stop.
 
 ## Starter Code
 
@@ -79,3 +88,7 @@ the values from strings.
 In order to write this program effectively, you should split the problem into
 lots of small functions, and then use a single function to decides which other 
 function to call.
+
+Note: Python has built-in functions called `or` and `min`, so you can't use
+those as names of functions in your code. Rename the functions to something
+else.
