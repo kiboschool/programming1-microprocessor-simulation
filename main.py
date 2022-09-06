@@ -6,8 +6,65 @@ import sys
 # You need to update the process function to actually handle the operations. To
 # start, it just prints out each line of the input.
 def process(line):
-    print(line)
+    op, a, b = line.split(' ')
+    a = int(a)
+    b = int(b)
+    if op == 'noop':
+        noop()
+    elif op == 'add':
+        add(a,b)
+    elif op == 'mul':
+        mul(a,b)
+    elif op == 'gt':
+        gt(a,b)
+    elif op == 'or':
+        log_or(a,b)
+    elif op == 'nand':
+        nand(a,b)
+    elif op == 'min':
+        minm(a,b)
+    elif op == 'shift':
+        shift(a,b)
+    else:
+        print("invalid operation", line)
 
+def noop():
+    print()
+
+def add(a,b):
+    print(a + b)
+
+def mul(a,b):
+    print(a * b)
+
+def gt(a,b):
+    if a > b:
+        print(1)
+    else:
+        print(0)
+
+def log_or(a,b):
+    if a or b:
+        print(1)
+    else:
+        print(0)
+
+def nand(a,b):
+    if a and b:
+        print(0)
+    else:
+        print(1)
+
+def minm(*args):
+    smallest = args[0]
+    for arg in args:
+        if arg < smallest:
+            smallest = arg
+    print(smallest)
+
+def shift(a, b):
+    if a > 0 and b > 0:
+        print(a << b)
 
 # The run function is provided, you don't need to change it.
 # It reads all the lines from a file, then calls the process function
