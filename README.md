@@ -60,6 +60,10 @@ Below are the processor operations that you should support, and what they should
 * If the processor encounters an invalid operation, it should print an error 
     message and stop.
 
+## Explanation
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/HadN-JODWnE/0.jpg)](https://www.youtube.com/watch?v=HadN-JODWnE)
+
+
 ## Starter Code
 
 `main.py` has the function `run` already written for you. It reads a file
