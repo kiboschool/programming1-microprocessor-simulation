@@ -100,3 +100,22 @@ function to call.
 Note: Python has built-in functions called `or` and `min`, so you can't use
 those as names of functions in your code. Rename the functions to something
 else.
+
+## Communicate Project Status
+
+Your manager, Nancy, would like a status update describing your work on developing the microprocessor simulation.  Write an email message (in the file called `ProjectSummary.txt`) to Nancy that provides a high-level description of how the program functions, and outlines the portion of the work that you found most challenging and how you overcame that challenge.  Remember that Nancy is busy!  She is managing a team of 15 people and will be reviewing everyone's status update each week.  Nancy is a technical manager, so she understands software development; however, she probably doesn't need a line-by-line explanation of your code. It's important that your message is clearly and concisely addresses the above two points as efficiently as possible. 
+
+### Assessment
+
+A key component of being successful as a Software Engineer (or, more generally, in a technical field) is being able to communicate effectively about the work that you are doing.  This includes clearly conveying details about the complexities of the problems that you're working on, and explaining how your solution works.  Therefore, we will use the 7Cs of Communication (remember this from Communicating for Success?) to assess your message to Nancy:
+
+
+| Criteria    | Proficient (3)      | Competent (2)     | Developing (1)   |
+|-------------|--------------------|-------------------|------------------|
+| Clarity     | The email is exceptionally clear and easy to understand, utilizing straightforward language tailored for Nancy. | The email is clear, though minor instances of unnecessary complexity or ambiguity may be present. | The email lacks clarity, with convoluted language that might hinder Nancy's understanding. |
+| Conciseness | The email efficiently addresses both points, providing a high-level description of the program's function and addressing the challenging portion succinctly. | The email is mostly concise, though some areas could be more succinct while still covering the required information. | The email tends to be wordy, potentially overwhelming Nancy with unnecessary details. |
+| Concreteness| The email includes specific examples or details to illustrate the program's function and the challenging portion, aiding Nancy's comprehension. | The email provides some concrete details, but further elaboration and examples could enhance clarity. | The email lacks specific examples or specifics, making it challenging for Nancy to visualize the content. |
+| Correctness | The email is accurate and error-free, maintaining a professional tone and polished language. | The email contains minor errors that do not significantly affect the overall accuracy and professionalism. | The email has noticeable errors in grammar, spelling, or tone that detract from the message's credibility. |
+| Coherence   | The email is well-organized, presenting information in a logical sequence that aligns with the task's requirements. | The email is structured logically, though some areas might benefit from improved organization. | The email lacks a clear structure, making it challenging for Nancy to follow the flow of information. |
+| Completeness| The email fully addresses both points, offering a comprehensive high-level description and explanation of the challenging portion. | The email covers both points but might lack depth in either the program's function or the explanation of the challenge. | The email omits significant aspects of either the program's function or the challenge, impacting Nancy's understanding. |
+| Courtesy    | The email demonstrates consideration for Nancy's busy schedule and technical understanding, using a respectful and considerate tone. | The email acknowledges Nancy's role and technical understanding, though some sections might be overly casual or unintentionally insensitive. | The email lacks consideration for Nancy's perspective, potentially coming across as dismissive or inconsiderate. |
