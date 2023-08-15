@@ -7,3 +7,7 @@ cp -rn /autograder/submission/* /autograder/source/
 cd /autograder/source
 
 python3 run_tests.py
+python3 chatgpt_test.py
+python3 merge_results.py /autograder/results/results.json ./project_summary_results.json
+
+mv results.json /autograder/results/
